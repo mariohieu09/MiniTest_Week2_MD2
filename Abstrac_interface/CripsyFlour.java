@@ -69,4 +69,9 @@ public class CripsyFlour extends Material implements Discount{
         }
         return  result;
     }
+
+    @Override
+    public String toString() {
+        return "CripsyFlour: Cost: " + this.getCost() + ". ManufactorDate: " + this.getManufacturingDate() + ". ExpireDate: " + this.getExpiryDate();
+    }
 }

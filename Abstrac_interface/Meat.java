@@ -108,4 +108,9 @@ public class Meat extends Material implements Discount {
         }
         return discount;
     }
+
+    @Override
+    public String toString() {
+        return "Meat: Cost: " + this.getCost() + ". ManufactoringDate: " + this.getManufacturingDate() + ". ExpireDate: " + this.getExpiryDate();
+    }
 }
