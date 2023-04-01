@@ -5,21 +5,30 @@ import java.time.Month;
 import java.time.MonthDay;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Materials_Manage {
     public static void main(String[] args) {
         ArrayList<Material> list = new ArrayList<Material>();
-        list.add(new Meat(LocalDate.of(2023,4,1), 209));
-        list.add(new Meat(LocalDate.of(2023,3,26), 300));
-        list.add(new Meat(LocalDate.of(2023,3,30), 400));
-        list.add(new Meat(LocalDate.of(2023,3,29),200));
-        list.add(new Meat(LocalDate.of(2023,3,20),400));
-        list.add(new CripsyFlour(LocalDate.of(2022,2,9), 1000));
-        list.add(new CripsyFlour(LocalDate.of(2022,7,7), 2000));
-        list.add(new CripsyFlour(LocalDate.of(2022, 8, 6), 4000));
-        list.add(new CripsyFlour(LocalDate.of(2022, 9, 9), 6000));
-        list.add(new CripsyFlour(LocalDate.of(2022, 4, 30), 8000));
-//        var c = new CripsyFlour(LocalDate.of(2022,3,23),3000);
+        Scanner sc = new Scanner(System.in);
+        for(int i = 0; i < 10; i++){
+            System.out.println("Nhap vao so ban muon them: \n1. Meat \n2.CripsyFlour");
+            int x = sc.nextInt();
+            System.out.println("Nhập năm sản xuất: ");
+            int year = sc.nextInt();
+            System.out.println("Nhập tháng sản xuất: ");
+            int month = sc.nextInt();
+            System.out.println("Nhập ngày sản xuất: ");
+            int day = sc.nextInt();
+            System.out.println("Nhập giá tiền: ");
+            int cost = sc.nextInt();
+            if (x == 1) {
+                list.add(new Meat(LocalDate.of(year,month,day), cost));
+            }else{
+                list.add(new CripsyFlour(LocalDate.of(year, month, day), cost));
+            }
+
+        }
         for(Material c : list){
             if(c instanceof Meat){
                 System.out.println("Gia thit khi chua giam gia la: ");
@@ -35,4 +44,5 @@ public class Materials_Manage {
         }
 
     }
+
 }
